@@ -1,0 +1,19 @@
+
+
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_1091">Text with this font applied</p> */
+.fontsforweb_fontid_1091 {
+	font-family: 'DSDIGI' !important;
+	color: white;
+	border: 1px ;
+	overflow: hidden;
+	margin: 0px;	
+	align-content:right;
+	font-weight: bold;
+	font-size: 150%;
+	background-color: #ff7300;
+	padding:2px 0;
+	margin-left:5px;
+}
+
+
+

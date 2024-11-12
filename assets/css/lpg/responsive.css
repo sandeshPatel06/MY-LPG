@@ -1,0 +1,194 @@
+@media all and (max-width:400px) {
+    .header{
+        width:auto;
+        margin:0 auto;
+        background:#4f1571;
+    }
+    #main {
+        width:auto;
+        height:381px;
+        margin-top: 7px;
+        position: relative;
+        float:none;
+        background:url(../images/glob_responsive.png) no-repeat;
+        /*background: transparent url(../images/clouds.gif) no-repeat;*/
+    }
+    .mid_con_Right{
+        float:none;
+        padding-right:0 !important;
+    }
+    
+    .footer {
+        background: none repeat scroll 0 0 #4F1571;
+        color: #FFFFFF;
+        font-size: 12px;
+        margin: 0 auto;
+        padding: 5px 0;
+        text-align: center;
+        width:auto;
+    }
+    
+    .footer_left {
+        float:none;
+        padding: 0 0 0 5px;
+    }
+    
+    .footer_right {
+        float:none;
+        padding: 0 5px 0 0;
+    }
+    .mid_container {
+        background: url("../images/mid_con_bg.jpg") repeat-y scroll 0 0 rgba(0, 0, 0, 0);
+        margin: 0 auto;
+        padding-top: 4px;
+        width:auto;
+    }
+    .content{
+        background:url(../images/respo_content_bg.png) no-repeat;
+        width:auto;
+        height:420px;
+    }
+    .content p{
+        color: #900202;
+        font-size:18px;
+        line-height: 18px;
+        padding: 24px 26px 21px 50px;
+        
+    }
+    .content p.subcontext{
+        color: #000;
+        font-size:12px;
+        line-height: 18px;
+        padding:0 32px 8px 60px !important;
+        font-family:"Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;;
+        
+    }
+    .content ul{
+        margin: 0 68px 0 65px;
+        padding:0;
+    }
+    .content ul li{
+        list-style: none outside none;
+        background:url(../images/bullet.jpg) no-repeat 0 5px;
+        padding: 0 0 0 16px;
+        color:#000;
+        font-size:12px;
+        line-height:1.4em;
+    }
+    .cylinder{
+        padding-left:20px !important;
+       
+    }
+    .cylinder img{
+        padding:10px;
+    }
+    .logo_container {
+        padding-top:1px;
+         padding-bottom: 10px;
+    }
+    
+    .logo_container img {
+        border: medium none;
+        padding: 0 0 0 10px;
+        width: auto;
+    }
+    .logo_gas img{
+        width:auto;
+        height:auto;
+        border:0;
+        padding:0;
+    }
+    .logo_gas{
+        float:none;
+    }
+    #check {
+        cursor: default;
+        left: 234px;
+        opacity: 0;
+        top: 83px;
+        width: 50px;
+    }
+    #Muchmore{
+        cursor: default;
+        height: 40px;
+        left: 291px;
+        opacity: 0;
+        top: 122px;
+        width: 49px;
+    }
+    #Book {
+        cursor: default;
+        left: 123px;
+        opacity: 0;
+        top: 85px;
+        width: 50px;
+    }
+    #track{
+        cursor: default;
+        left: 63px;
+        opacity: 0;
+        top: 144px;
+        width: 50px;
+    }
+    #choose {
+        cursor: default;
+        left: 174px;
+        opacity: 0;
+        top: 156px;
+        width: 66px;
+    }
+    #monitor {
+        cursor: default;
+        left: 110px;
+        opacity: 0;
+        top: 224px;
+        width: 66px;
+    }
+    #surrender {
+        cursor: default;
+        left: 229px;
+        opacity: 0;
+        top: 221px;
+        width: 66px;
+    }
+    #feedback {
+        cursor: default;
+        left: 172px;
+        opacity: 0;
+        top: 269px;
+        width: 66px;
+    }
+    .tTip {
+        width: 200px;
+        position: absolute;
+        cursor: pointer;
+        font-weight: bold;
+        text-align:center;
+        color:#FFF;
+    }
+    .tip {
+        color: #fff;
+        text-align:center;
+        font-size:16px;
+    }
+    
+    .tip {
+        width: 170px;
+        padding-top:18px;
+        overflow: hidden;
+        display: none;
+        position: absolute;
+        z-index: 500;
+        background: transparent url(../images/tipTopRe.png) no-repeat top;
+    }
+    .tipMid {
+        background: transparent url(../images/tipMidRe.png) repeat-y;
+        padding: 0 25px 10px 25px;
+    }
+    .tipBtm {
+        background: transparent url(../images/tipBtmRe.png) no-repeat bottom;
+        height: 25px;
+    }
+    
+     }
+    

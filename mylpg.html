@@ -1,0 +1,857 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>My LPG.in | Home</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/lpg/collapse1.css">
+   
+    <link href="assets/css/lpg/style_new1.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/lpg/responsive.css" rel="stylesheet" type="text/css" />
+    
+    <link href="assets/css/lpg/modal.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/lpg/font1.css" rel="stylesheet" type="text/css" />
+
+    
+    <script type="text/javascript" src="assets/js/lpg/jquery-1.3.1.min.js"></script>
+  
+    <script src="assets/js/lpg/jquery-3.7.1.min.js"></script>
+    
+    <script type="text/javascript" src="assets/css/js/lpg/main.js"></script>
+    <script type="text/javascript" src="assets/js/lpg/jquery.collapsible.min.js"></script>
+    <script type="text/javascript" src="assets/css/js/lpg/jquery.scrollToElement.js"></script>
+
+    <script>
+        $(function () {
+            $('#first').collapsible('accordion-open', {
+                contentOpen: 1
+            });
+            $('#second').collapsible('accordion', {
+                animate: false
+            });
+            $('#third').collapsible('accordion');
+            $('#fourth').collapsible('default-open');
+            $('#fifth').collapsible({
+                animate: false
+            });
+            $('#sixth').collapsible();
+            $('#howUseLink').scrollToElement(552);
+            $('#whatNeedLink').scrollToElement(315);
+            $('#whatIsLink').scrollToElement(187);
+            $('.title').scrollToElement('body');
+
+        });
+    </script>
+    <script type="text/javascript">
+        
+    </script>
+    <script>
+
+        function isPlaying(playerId) {
+            var player = document.getElementById(playerId);
+            return !player.paused && !player.ended && 0 < player.currentTime;
+        }
+
+        function audioLoad() {
+
+            var vid1 = document.getElementById("audioplayer1");
+            var vid2 = document.getElementById("audioplayer2");
+
+            if ((!(isPlaying("audioplayer2"))) && (!(isPlaying("audioplayer2")))) {
+                vid1.play();
+            }
+
+            vid1.onplaying = function () {
+                if (isPlaying("audioplayer2")) {
+                    vid1.pause();
+                }
+
+            }
+
+
+            vid2.onplaying = function () {
+                if (isPlaying("audioplayer1")) {
+                    vid2.pause();
+                }
+
+            }
+        }
+
+    </script>
+    <script>
+
+        function OnLoadFunc() {
+            //alert(document.cookie);
+            lang_name = readCookie("LN_Lang");
+            //alert(document.cookie);
+            var clientHeight = document.getElementById('containDiv').clientHeight;
+            var clientWidth = document.getElementById('containDiv').clientWidth;
+            var img = document.getElementById('pahal_img');
+            clientHeight = clientHeight + "px";
+            //alert(clientWidth + "+" + clientHeight);
+            clientWidth = clientWidth + "px";
+            $('#pahal_img').css("height", clientHeight);
+            $('#pahal_img').css("width", clientWidth);
+
+            var contentWidth = $('.content').width();
+            //alert(contentWidth);
+            contentWidth = contentWidth + "px";
+            $('#youtube').css("width", contentWidth);
+            //Centre position the lpgid table element as css somehow not working
+
+            //get the form width
+            var formWidth = $('.mylpg_Form').width();
+            var lpgid_quartet_wid = $('#lpgid_quartet').width();
+            //Shift #lpgid_quartet to the left by setting left margin as the half of diff.
+            var diff = (formWidth - lpgid_quartet_wid) / 2.
+
+            $('.mid_container').css("visibility", "visible");
+            var lpgid_elem = document.getElementById('lpgid_quartet');
+            lpgid_elem.style.marginLeft = diff + "px";
+
+
+            if ((lang_name != "") && window.location.href.indexOf("mylang") > -1) {
+                elmnt = document.getElementById("langSelector");
+
+                for (var i = 0; i < elmnt.options.length; i++) {
+
+                    if (elmnt.options[i].value == lang_name) {
+                        elmnt.selectedIndex = i;
+                        //window.top.location.href="http://mylang.mylpg.in/SetCookie.aspx?lang="+lang_name;
+                        break;
+                    }
+
+                }
+            }
+            document.mylpgForm.cons_id.focus();
+
+        }
+
+        function readCookie(cookieName) {
+            if (document.cookie == "") {
+                return document.cookie;
+            }
+            var theCookie = " " + document.cookie;
+            var ind = theCookie.indexOf(" " + cookieName + "=");
+            if (ind == -1) ind = theCookie.indexOf(";" + cookieName + "=");
+            if (ind == -1 || cookieName == "") return "";
+            var ind1 = theCookie.indexOf(";", ind + 1);
+            if (ind1 == -1) ind1 = theCookie.length;
+            return unescape(theCookie.substring(ind + cookieName.length + 2, ind1));
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            //var d = new Date ();d.setTime(d.getTime() + (exdays*24*60*60*1000));var expires = "expires="+d.toGMTString();document.cookie = cname + "=" +  cvalue + "; " + expires+"; "+"path=/;domain=.linguify.com";
+            var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; " + expires + "; " + "path=/;domain=.mylpg.in";
+        }
+
+        function callCylinder(comp) {
+            var e = document.getElementById("langSelector");
+            var strUser = e.options[e.selectedIndex].value;
+
+            switch (comp) {
+                case 1:
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        //window.location.href = "http://my.ebharatgas.com/bharatgas/main.jsp?opt=lpgServices";
+                        window.location.href = "https://my.ebharatgas.com/LPGservices/index";
+                    }
+                    else {
+                        //window.location.href = "http://ebharatgas.linguify.com/bharatgas/main.jsp?opt=lpgServices";
+                        //window.location.href = "http://mylang.ebharatgas.com/bharatgas/main.jsp?opt=lpgServices";
+                        window.location.href = "https://my.ebharatgas.com/LPGservices/index";
+
+                    }
+                    break;
+                case 2:
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        window.location.href = "http://myhpgas.in/myHPGas/HPGas/LPGservices.aspx";
+                    }
+                    else {
+                        //window.location.href = "http://myhpgas.linguify.com/myHPGas/HPGas/LPGservices.aspx";
+                        //window.location.href = "http://myhpgas.linguify.com/myHPGas/HPGas/SetLanguage.aspx?LN_Lang="+strUser;
+                        window.location.href = "http://mylang.myhpgas.in/myHPGas/HPGas/SetLanguage.aspx?LN_Lang=" + strUser;
+                    }
+                    break;
+                case 3:
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        window.location.href = "https://cx.indianoil.in/webcenter/portal/LPG/pages_lpgservices";
+                    }
+                    else {
+                        //window.location.href = "http://indane.linguify.com/transparency/about-portal.php";
+                        window.location.href = "https://cx.indianoil.in/webcenter/portal/LPG/pages_lpgservices";
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+
+        function openLPG_GiveUp_url(val) {
+            var loc = document.location.href;
+            var e = document.getElementById("langSelector");
+            var strUser = e.options[e.selectedIndex].value;
+            switch (val) {
+                case "I":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        //window.open("http://indane.co.in/optout_inf.php");
+                        window.open("https://cx.indianoil.in/webcenter/portal/LPG/pages_giveupsubsidyvoluntarilylpgservice");
+                    }
+                    else {
+                        //window.open("http://indane.linguify.com/optout_inf.php");
+                        //window.open("http://mylang.indane.co.in/optout_inf.php");
+                        window.open("https://cx.indianoil.in/webcenter/portal/LPG/pages_giveupsubsidyvoluntarilylpgservice");
+                    }
+                    break;
+                case "B":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        //window.open("http://my.ebharatgas.com/bharatgas/main.jsp?opt=subsidy");
+                        window.open("https://my.ebharatgas.com/bharatgas/GiveUpSubsidy/Index");
+                    }
+                    else {
+                        //window.open("http://ebharatgas.linguify.com/bharatgas/main.jsp?opt=subsidy");
+                        //window.open("http://mylang.ebharatgas.com/bharatgas/main.jsp?opt=lpgServices");
+                        window.open("https://my.ebharatgas.com/bharatgas/GiveUpSubsidy/Index");
+                    }
+                    break;
+                case "H":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        //window.open("http://myhpgas.in/myHPGas/HPGas/User/UnregisterSubsidy.aspx");
+                        window.open("https://myhpgas.in/myhpgas/hpgas/optoutsubsidy.aspx");
+                    }
+                    else {
+                        //window.open("http://myhpgas.linguify.com/myHPGas/HPGas/User/UnregisterSubsidy.aspx");
+                        //window.open("http://mylang.myhpgas.in/myHPGas/HPGas/User/UnregisterSubsidy.aspx");
+                        window.open("https://myhpgas.in/myhpgas/hpgas/optoutsubsidy.aspx");
+
+                    }
+                    break;
+                case "1":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        window.open("http://indane.co.in/scroll_honour.php");
+                    }
+                    else {
+                        //window.open("http://indane.linguify.com/scroll_honour.php");
+                        window.open("http://mylang.indane.co.in/scroll_honour.php");
+                    }
+                    break;
+                case "3":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        window.open("http://myhpgas.in/myHPGas/HPGas/ScrollOfHonour.aspx");
+                    }
+                    else {
+                        //window.open("http://myhpgas.linguify.com/myHPGas/HPGas/ScrollOfHonour.aspx");
+                        window.open("http://mylang.myhpgas.in/myHPGas/HPGas/ScrollOfHonour.aspx");
+                    }
+                    break;
+                case "2":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        window.open("http://my.ebharatgas.com/bharatgas/ScrollOfHonour.faces?opt=eb");
+                    }
+                    else {
+                        //window.open("http://ebharatgas.linguify.com/bharatgas/ScrollOfHonour.faces?opt=eb");
+                        window.open("http://mylang.ebharatgas.com/bharatgas/ScrollOfHonour.faces?opt=eb");
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            window.location.replace(loc.substring(0, loc.length - 13));
+        }
+        function closeSubsidyBut1() {
+            var loc = document.location.href;
+            window.location.replace(loc.substring(0, loc.length - 13));
+        }
+
+        function langChanged(obj) {
+
+            var selectedLanguage = obj.value; //obj[obj.selectedIndex].value;
+
+            if ((obj.value == 'en-US') && (window.location.href.indexOf("mylang") == -1)) {
+                //If previous option was select and now trying to select Eng option then don't do anything
+                //In such case url would be mylpg.in and not mylang
+                window.top.location.href = "index.html";
+            }
+            else if (selectedLanguage != -1) {
+                //window.top.location.href="http://mylpg.linguify.com/SetCookie.aspx?lang="+selectedLanguage;
+                window.top.location.href = selectedLanguage + ".html";
+
+            }
+        }
+        function check() {
+            var letters = document.mylpgForm.cons_id.value.length + 1;
+            if (letters <= 1) { document.mylpgForm.cons_id.focus() }
+            else { document.mylpgForm.cons_id1.focus() }
+        }
+        function check1() {
+            var letters = document.mylpgForm.cons_id1.value.length + 1;
+            if (letters <= 4) { document.mylpgForm.cons_id1.focus() }
+            else { document.mylpgForm.cons_id2.focus() }
+        }
+        function check2() {
+            var letters = document.mylpgForm.cons_id2.value.length + 1;
+            if (letters <= 4) { document.mylpgForm.cons_id2.focus() }
+            else { document.mylpgForm.cons_id3.focus() }
+        }
+        function check3() {
+            var letters = document.mylpgForm.cons_id3.value.length + 1;
+            if (letters <= 4) { document.mylpgForm.cons_id3.focus() }
+            else { document.mylpgForm.cons_id4.focus() }
+        }
+        function check4() {
+            var letters = document.mylpgForm.cons_id4.value.length + 1;
+            if (letters <= 4) {
+                document.mylpgForm.cons_id4.focus();
+            }
+            else {
+                document.getElementsByClassName("btn")[0].focus();
+                //document.getElementById("btn").focus();
+
+            }
+        }
+
+        function checkNumeric()//call on keyPress
+
+        {
+
+            if ((event.keyCode > 47 && event.keyCode < 58)) {
+                return true;
+
+            } else {
+
+                return false;
+
+            }
+
+        }
+        function checkNumeric1()//call on keyPress
+
+        {
+
+            if ((event.keyCode > 48 && event.keyCode < 52)) {
+
+
+
+
+                return true;
+
+            } else {
+
+                return false;
+
+            }
+
+        }
+        function fnSubmit() {
+            var consid = document.getElementById('cons_id').value;
+
+            var cid = document.getElementById('cons_id').value + document.getElementById('cons_id1').value + document.getElementById('cons_id2').value + document.getElementById('cons_id3').value + document.getElementById('cons_id4').value;
+
+
+            if (cid.length < 17) {
+
+                alert("Please enter 1-4-4-4 digit in these Boxes");
+
+                document.getElementById('cons_id').focus();
+                return false;
+            }
+            else {
+                var e = document.getElementById("langSelector");
+                var strUser = e.options[e.selectedIndex].value;
+                switch (consid) {
+                    case "1":
+                        if ((strUser == 'en-US') || (strUser == -1)) {
+                            //string_url = "http://my.ebharatgas.com/bharatgas/Lpgid?lpgid=" + cid;
+                            //string_url = "https://myhpgas.in/myhpgas/PortalLogin.aspx";
+                            string_url = "https://my.ebharatgas.com/bharatgas/User/Login";
+                        }
+                        else {
+                            //string_url = "http://ebharatgas.linguify.com/bharatgas/Lpgid?lpgid=" +cid;
+                            //string_url = "http://mylang.ebharatgas.com/bharatgas/Lpgid?lpgid=" + cid;
+                            //string_url = "https://mylang.myhpgas.in/myhpgas/PortalLogin.aspx";
+                            string_url = "https://mylang.ebharatgas.com/bharatgas/User/Login";
+                        }
+                        window.open(string_url, "_blank");
+                        break;
+                    case "2":
+                        if ((strUser == 'en-US') || (strUser == -1)) {
+                            //string_url = "http://myhpgas.in/myHPGas/HPGas/LPGID.aspx?lpgid=" + cid;
+                            //string_url = "https://my.ebharatgas.com/bharatgas/User/Login";
+                            string_url = "https://myhpgas.in/myhpgas/PortalLogin.aspx";
+                        }
+                        else {
+                            //string_url = "http://myhpgas.linguify.com/myHPGas/HPGas/LPGID.aspx?lpgid=" +cid;
+                            //string_url = "http://mylang.myhpgas.in/myHPGas/HPGas/LPGID.aspx?lpgid=" + cid;
+                            //string_url = "https://mylang.ebharatgas.com/bharatgas/User/Login";
+                            string_url = "https://mylang.myhpgas.in/myhpgas/PortalLogin.aspx";
+                        }
+
+                        window.open(string_url, "_blank");
+                        break;
+                    case "3":
+                        if ((strUser == 'en-US') || (strUser == -1)) {
+                            //string_url = "http://indane.co.in/redirect-login-reg.php?LpgId=" + cid;
+                            string_url = "https://cx.indianoil.in/webcenter/portal/Customer/pages_landingpage";
+                        }
+                        else {
+                            //string_url = "http://indane.linguify.com/redirect-login-reg.php?LpgId=" +cid;
+                            //string_url = "http://mylang.indane.co.in/redirect-login-reg.php?LpgId=" + cid;
+                            string_url = "https://cx.indianoil.in/webcenter/portal/Customer/pages_landingpage";
+                        }
+
+                        window.open(string_url, "_blank");
+                        return false;
+                        break;
+                    default:
+                        alert("Invalid LPG Id");
+                        break;
+                }
+
+            }
+
+        }
+
+        function openLPG_ID_url(val) {
+            var e = document.getElementById("langSelector");
+            var strUser = e.options[e.selectedIndex].value;
+            switch (val) {
+                case "I":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        //window.open("http://indane.co.in/findlpgid.php");
+                        window.open("https://cx.indianoil.in/webcenter/portal/LPG/pages_findyourlpgid?source=JoinPahal");
+                    }
+                    else {
+                        //window.open("http://indane.linguify.com/findlpgid.php");
+                        //window.open("http://mylang.indane.co.in/findlpgid.php");
+                        window.open("https://cx.indianoil.in/webcenter/portal/LPG/pages_findyourlpgid?source=JoinPahal");
+                    }
+                    break;
+                case "B":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        //window.open("http://my.ebharatgas.com/bharatgas/main.jsp?opt=aadhaar&findid=1");
+                        window.open("https://my.ebharatgas.com/LPGservices/FindLPGID");
+                    }
+                    else {
+                        //window.open("http://ebharatgas.linguify.com/bharatgas/ConsumerAadhaarStatus.faces?findid=1");
+                        //window.open("http://ebharatgas.linguify.com/bharatgas/main.jsp?opt=aadhaar&findid=1");
+                        //window.open("http://mylang.ebharatgas.com/bharatgas/main.jsp?opt=aadhaar&findid=1");
+                        window.open("https://my.ebharatgas.com/LPGservices/FindLPGID");
+                    }
+                    break;
+                case "H":
+                    if ((strUser == 'en-US') || (strUser == -1)) {
+                        window.open("http://myhpgas.in/myHPGas/HPGas/FindYourLPGID.aspx");
+                    }
+                    else {
+                        //window.open("http://myhpgas.linguify.com/myHPGas/HPGas/FindYourLPGID.aspx");
+                        window.open("http://mylang.myhpgas.in/myHPGas/HPGas/FindYourLPGID.aspx");
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+
+            //
+
+
+            //document.getElementByClass('popup').style.visibility = "hidden";
+            var loc = document.location.href;
+            window.location.replace(loc.substring(0, loc.length - 11));
+
+
+           
+        }
+
+        function closeSubsidyBut() {
+            var loc = document.location.href;
+            window.location.replace(loc.substring(0, loc.length - 11));
+        }
+    </script>
+   
+</head>
+
+<body onLoad="OnLoadFunc()">
+    <script>
+    (function () {
+            var _fbq = window._fbq || (window._fbq = []);
+            if (!_fbq.loaded) {
+                var fbds = document.createElement('script');
+                fbds.async = true;
+                fbds.src = '//connect.facebook.net/en_US/fbds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(fbds, s);
+                _fbq.loaded = true;
+            }
+            _fbq.push(['addPixelId', '1605714883045861']);
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript>
+        <img height="1" width="1" alt="" style="display:none"
+             src="https://www.facebook.com/tr?id=1605714883045861&amp;ev=PixelInitialized" />
+    </noscript>
+
+    <div id="wrapper">
+        <table class="header" border="0"
+               style="background-color: #ff7300; foreground-color:blue; font-size: 10px; border-spacing:0; line-height:1.6em;">
+            <tbody>
+                <tr>
+                    <td align="right" width="100%">
+                        <font color="white">Select Language</font>
+                        <select id="langSelector" style="font-size: 10px" onchange="langChanged(this);">
+                           
+                            <option value="-1">-Select-</option>
+                            <option Value="en-US" selected>English</option>
+
+                            <option Value="hi-IN">हिंदी</option>
+
+                            <option Value="mr-IN">मराठी</option>
+
+                            <option Value="or-IN">ଓଡ଼ିଆ</option>
+
+                            <option Value="gu-IN">ગુજરાતી</option>
+
+                            <option Value="ta-IN">தமிழ்</option>
+
+                            <option Value="pa-IN">ਪੰਜਾਬੀ</option>
+
+                            <option Value="kn-IN">ಕನ್ನಡ</option>
+
+                            <option Value="as-IN">অসমীয়া</option>
+
+                            <option Value="te-IN">తెలుగు</option>
+
+                            <option Value="ml-IN">മലയാളം</option>
+
+                            <option Value="ur-PK">اردو</option>
+
+                            <option Value="bn-IN">বাংলা</option>
+
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="header">
+           
+
+            <div class="logo_nic"><img src="assets/images/lpg/nic_logo.gif" height="80px" /></div>
+            <div class="logo_gas"><img src="assets/images/lpg/logo_gas.png" /></div>
+
+            <table align="right">
+                <tr>
+                   
+                    <td>
+                        <a href="#give_up_form" target="_self">
+                            <img src="assets/images/lpg/giveitup-logo-click1.png" alt="Click here to give up LPG subsidy online" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <a class="overlay" id="login_form"></a>
+            <div class="popup">
+                <h1>Please select your company name</h1>
+
+                <input type="radio" name="company" value="BPCL" onclick="openLPG_ID_url('B')">Bharat Gas
+                <input type="radio" name="company" value="HPCL" onclick="openLPG_ID_url('H')">HP Gas
+                <input type="radio" name="company" value="IOCL" onclick="openLPG_ID_url('I')">Indane
+                <p></p>
+                <input type="image" src="assets/images/lpg/close_but.jpg" height="40px" onclick="closeSubsidyBut();">
+            </div>
+
+
+            <a class="overlay" id="give_up_form"></a>
+            <div class="popup">
+                <h1>Welcome LPG Customer!</h1>
+
+                <p>In order to give up your LPG subsidy online please select your company name from below</p>
+
+                <input type="radio" name="company1" value="B" onclick="openLPG_GiveUp_url('B')">Bharat Gas
+                <input type="radio" name="company1" value="H" onclick="openLPG_GiveUp_url('H')">HP Gas
+                <input type="radio" name="company1" value="I" onclick="openLPG_GiveUp_url('I')">Indane
+                <p></p>
+                <input type="image" name="abcd" src="assets/images/lpg/close_but.jpg" height="40px" onclick="closeSubsidyBut1()">
+            </div>
+
+            <a class="overlay" id="scrll_of_hon"></a>
+            <div class="popup">
+
+                <p>To view Scroll of honour please select company name</p>
+
+                <input type="radio" name="company1" value="2" onclick="openLPG_GiveUp_url('2')">Bharat Gas
+                <input type="radio" name="company1" value="3" onclick="openLPG_GiveUp_url('3')">HP Gas
+                <input type="radio" name="company1" value="1" onclick="openLPG_GiveUp_url('1')">Indane
+                <p></p>
+                <input type="image" name="abcd" src="assets/images/lpg/close_but.jpg" height="40px" onclick="closeSubsidyBut1()">
+            </div>
+
+
+
+            <div class="clr"></div>
+        </div>
+        <div class="mid_container" >
+
+            <div style="width:1024px;height:20px;background-color:#660000;">
+                <marquee id="marquee" behavior="scroll" direction="left" scrollamount="5" scrolldelay="5"
+                         onMouseOver="this.stop()" onMouseOut="this.start()">
+                 
+                    <span>
+                        <a href="http://pib.nic.in/newsite/PrintRelease.aspx?relid=135767" target="_blank">
+                            Launch of
+                            round the clock online payment facility to refill LPG
+                        </a>
+                    </span> &nbsp; &nbsp;
+                    <span>
+                        <a href="https://twitter.com/narendramodi/status/563164986483023873" target="_blank">
+                            Hon'ble
+                            PM tweets about the largest cash transfer scheme
+                        </a>
+                    </span> &nbsp; &nbsp;
+                    <span>
+                        <a href="images/urja_giveitup.jpg" target="_blank">
+                            Hon'ble PM launching #GiveItUp campaign at
+                            Urja Sangam
+                        </a>
+                    </span> &nbsp; &nbsp;
+                    <span>
+                        <a href="images/PM_in_paris.mp4" target="_blank">
+                            Hon'ble PM's speech in Paris mentioning LPG
+                            subsidy Give up & DBTL
+                        </a>
+                    </span>&nbsp; &nbsp;
+                    <span>
+                        <a href="http://blogs.worldbank.org/publicsphere/things-we-do-nudging-people-give"
+                           target="_blank">World Bank Blog appreciating GiveItUp Initiative</a>
+                    </span>
+
+
+                </marquee>
+            </div>
+            <div id="main1">
+
+                <div style="clear:both">
+
+                    <div id="containDiv">
+                      
+                        <div id="pahal_img">
+                           
+                            <a id="box-link" href="#scrll_of_hon" target="_self"></a>
+                        </div>
+                        <br></br>
+                        <div id="second" class="collapse-container">
+                            <h1><span class="arrow-r"></span>Online Discussion Forums</h1>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <a href='http://mygov.in/group-issue/increasing-lpg-coverage-country/'
+                                               target="_blank">Increasing LPG Coverage in the Country</a>
+                                        </td>
+
+                                        <td>
+                                            <a href='http://mygov.in/group-issue/citizen-friendly-services/'
+                                               target="_blank">Citizen-Friendly Services</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <h1><span class="arrow-r"></span>Schemes for LPG Consumers</h1>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <a href="docs/CSR_Scheme_for_release_of_connection_to_BPL.pdf"
+                                               target="_blank">CSR scheme for BPL connections</a>
+                                        </td>
+                                      
+                                        <td>
+                                            <a href="docs/Policy_in_iocl.com.pdf"
+                                               target="_blank">Public liability insurance for LPG customers</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="docs/Opt_Out_of_Subsidy_for_mylpg_in.pdf" target="_blank">
+                                                Opting
+                                                out of LPG subsidy
+                                            </a>
+                                        </td>
+                                        <td><a href="docs/Portability_details.pdf" target="_blank">Portability</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="docs/Regularisation_of_connection_05022015.pdf"
+                                               target="_blank">Regularization of LPG connection</a>
+                                        </td>
+                                        <td><a href="http://petroleum.nic.in/dbt" target="_blank">PAHAL</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <h1><span class="arrow-r"></span>Notifications</h1>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <h1><span class="arrow-r"></span>Forms</h1>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><a href='docs/KYC.pdf' target="_blank">New Connection / KYC Form</td>
+                                        <td>
+                                            <a href='docs/unified_form-DBTL.pdf' target="_blank">PAHAL Joining Form</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <h1><span class="arrow-r"></span>Safety Tips for LPG Consumers</h1>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><a href='docs/Consumer_Guidance.pdf' target="_blank">Safety Tips</a></td>
+                                        
+            </div>
+            <div class="mid_con_Right">
+
+                <div class="content">
+
+                    <table id="join_pahal">
+                        <tr>
+                            <td>To Join PAHAL(DBTL) and Avail of Regular LPG Services</td>
+                        </tr>
+                        <tr>
+                            <td>Online Please Enter Your 17-Digit LPG ID Below</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                (<a href="#login_form" target="_self"><u>Click here</u></a> to know your LPG ID)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form name="mylpgForm" class="mylpg_Form" style="text-align: center;" method="get"
+                                      onSubmit="JavaScript:fnSubmit()">
+                                    <table id="lpgid_quartet">
+                                        <tbody style="align:center;">
+                                            <tr>
+                                                <td>
+                                                    <table class="num1" cellspacing="0" cellpadding="0">
+                                                        <td>
+                                                            <input type="text" size="4" maxlength="1" name="cons_id"
+                                                                   id="cons_id" onKeyUp="check()"
+                                                                   onKeyPress="return checkNumeric1();">
+                                                        </td>
+                                                        <td>-</td>
+
+                                                    </table>
+                                                </td>
+                                                <td>
+                                                    <table class="num" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" size="4" name="cons_id1"
+                                                                       id="cons_id1" maxlength="4" onKeyUp="check1()"
+                                                                       onKeyPress="return checkNumeric();">
+                                                            </td>
+                                                            <td>-</td>
+
+                                                            <td>
+                                                                <input type="text" size="4" name="cons_id2"
+                                                                       id="cons_id2" maxlength="4" onKeyUp="check2()"
+                                                                       onKeyPress="return checkNumeric();"
+                                                            </td>
+
+                                                            <td>-</td>
+
+                                                            <td>
+                                                                <input type="text" size="4" name="cons_id3"
+                                                                       id="cons_id3" maxlength="4" onKeyUp="check3()"
+                                                                       onKeyPress="return checkNumeric();">
+                                                            </td>
+
+                                                            <td>-</td>
+
+                                                            <td>
+                                                                <input type="text" size="4" name="cons_id4"
+                                                                       id="cons_id4" maxlength="4" onKeyUp="check4()"
+                                                                       onKeyPress="return checkNumeric();">
+                                                            </td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td><input type="submit" value="Submit" class="btn" /></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a href="javascript:onClick=callCylinder(1)">
+                                    <img src="assets/images/lpg/bpcl_cyl1.png" width="70"></img>
+                                </a>
+                                <a href="javascript:onClick=callCylinder(2)">
+                                    <img src="assets/images/lpg/hpcl_cyl1.png" width="70"></img>
+                                </a>
+                                <a href="javascript:onClick=callCylinder(3)">
+                                    <img src="assets/images/lpg/iocl_cyl1.png" width="70"></img>
+                                </a>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                   
+                <table class="fontsforweb_fontid_1091">
+                    <tr>
+                        <td>PAHAL(DBTL) Beneficiaries (in Cr.) :</td>
+                        <td id="benef">29.16 CR</td>
+                        <td width="10%"></td>
+                        <td>No. of People Given Up LPG Subsidy :</td>
+                        <td id="nou_gs">1.14 CR</td>
+
+                    </tr>
+                    <tr>
+                        <td>Cash Given (in Rs. Cr.) :</td>
+                        <td id="cashgiven">1,56,276 CR</td>
+                        <td width="10%"></td>
+                        <td colspan="2">
+                            <a href="https://www.pmuy.gov.in/index.aspx" target="_blank">
+                                Click Here for Connections Released under
+                                Ujjwala Scheme
+                            </a>
+                        </td>
+                      
+                    </tr>
+                </table>
+               
+            </div>
+            <div class="footer">
+                <div class="footer_left">
+                    Disclaimer: Portal is maintained by the respective Oil Marketing Companies.
+                </div>
+
+                <div class="clr"></div>
+            </div>
+        </font>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,460 @@
+/*-----------------------------------------------------------------------------------------------*/
+/*                   A BETTER TOOLTIP - POWERED BY JQUERY AWESOMENESS                            */
+/*                   AUTHOR: jon cazier                                                          */
+/*                   EMAIL: jon at 3nhanced dot com                                              */
+/*-----------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------*/
+/*                                  CSS RESET THANKS TO ERIC MEYER                               */
+/*                   http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/                */
+/*-----------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------*/
+/*                                          GENERAL STYLES                                       */
+/*-----------------------------------------------------------------------------------------------*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    border: 0 none;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+/*    vertical-align: baseline; */
+}
+body {
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.6em;
+	color: #999;
+}
+h1 {
+	font-size: 1.4em;
+	
+}
+h2 {
+	font-weight: bold;
+}
+
+#header_url a {
+	color: red;
+	font-weight: bold;
+	/*
+	text-decoration:none;
+	background : url("../images/scroll.gif");
+    border : none;
+    color : transparent;
+    
+    height: 48px;
+    width: 118px;
+    padding: 10px;
+    line-height: 48px;
+    */
+}
+
+#marquee a {
+	color: #f8d402;
+	font-weight: bold;
+	text-decoration:none;
+}
+
+a {
+	color: blue;
+	font-weight: bold;
+	text-decoration:none;
+}
+a:hover {
+	color: #999;
+}
+.clr{
+	clear:both;
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+/*                                          GENERAL LAYOUT                                       */
+/*-----------------------------------------------------------------------------------------------*/
+
+#wrapper{
+	margin:auto 0;
+	padding:0;
+	height: 100%;
+	
+}
+.header{
+	width:1024px;
+	margin:0 auto;
+/*	background:#4f1571; */
+	background:#9c0001;
+}
+@font-face {
+
+	font-family: 'DSDIGI';
+
+	src: url('../fonts/DSDIGI.eot');
+
+	src: local('DSDIGI'), url('../fonts/DSDIGI.woff') format('woff'), url('../fonts/DSDIGI.ttf') format('truetype');
+
+}
+.footer1 {
+    background: none repeat scroll 0 0 #ff7300;
+    color: #fff;
+    font-size: 12px;
+    margin: 0 auto;
+    padding: 1px 0;
+    text-align: right;
+    width: 1024px;
+}
+.fontsforweb_fontid_1091 {
+    background-color: red;
+    border: 1px none;
+    color: white;
+    font-family: "DSDIGI" !important;
+    font-size: 150%;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+    overflow: hidden;
+    padding: 2px 0;
+}
+.footer{
+	width:1024px;
+	padding:5px 0;
+	color:#fff;
+	background:#620001;
+	margin:0 auto;
+	text-align:center;
+	font-size:12px;
+}
+.footer_left{
+	float:left;
+	padding:0 0 0 5px;
+}
+.footer_right{
+	float:right;
+	padding:0 5px 0 0;
+}
+.footer_right a{
+	color:#fff;
+}
+.footer_right a:hover{
+	color:#fff;
+	text-decoration:underline;
+}
+.logo_gas{
+	float:left;
+}
+.logo_gas img{
+	height: 80px;
+	/*
+	width:231px;
+	height:61px;
+	*/
+	border:0;
+   /* padding: 12px 385px 8px 19px; */
+}
+.logo_nic{
+	float:left;
+	padding:0 10px;	
+}
+.logo_nic img{
+	border:0;
+}
+
+.header_ryt_images{
+	float:right;
+}
+.header_ryt_images img{
+	width:294px;
+	height:80px;
+	border:0;
+}
+
+.mid_container{
+	width:1024px;
+	height: 100%;
+	margin:0 auto;
+	/* 
+	background:#dee128;
+	*/
+	background-image: url("../images/MyLPG-tricolor-bg.jpg");
+	padding-top: 4px;
+	visibility: hidden;
+	
+}
+
+.mylpg_Form
+{
+	align-items: center;
+	display: block;
+	margin:auto;
+	}
+.mid_con_Right {
+    float: right;
+    height: 450px;
+    margin-right: 35px;    
+}
+.content{
+	width: calc(100% -10px);
+	color: #900202;
+	border-color: red;
+	border-style: solid;
+}
+
+#join_pahal{
+	border-style: solid;
+    border-color: red;
+    border-width:4px;
+    width: 100%;   
+}
+
+#join_pahal td
+{
+	align-content: center;
+	text-align: center;	
+	font-weight: bolder;
+}
+
+.content p{
+	color: #900202;
+    font-size: 23px;
+    line-height: 18px;
+ /*   padding: 7px 25px 4px 50px; */
+	
+}
+.content p.subcontext{
+	color: #000;
+    font-size: 14px;
+    line-height: 18px;
+	padding:10px 32px 2px 60px !important;
+	font-family:"Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;;
+	
+}
+.content ul{
+    margin: 0 68px 33px 65px;
+	padding:0;
+}
+.content ul li{
+	list-style: none outside none;
+	background:url(../images/bullet.jpg) no-repeat 0 8px;
+	padding: 0 0 0 16px;
+	color:#000;
+}
+
+/*.content span{
+	padding:0 74px;
+	color:#4b4848;
+	font-size:12px;
+	line-height:18px;
+	
+}*/
+.cylinder{
+	padding-left:30px;
+   
+}
+.cylinder img{
+	padding:10px;
+}
+#main {
+    background: url("../images/globe.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  /*  float: left; */
+    height: 455px;
+    margin-top: 7px;
+    position: relative;
+    width: 418px;
+}
+#left_container {
+/*    background: url("../images/globe.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); */
+    float: left;    
+    margin-top: 7px;
+    position: relative;
+    left: -20px;
+    width: 23px;
+    
+}
+
+#main1 {
+/*    background: url("../images/globe.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); */
+    float: left;
+    height: calc(100%);
+    margin-top: 7px;
+    position: relative;
+    width: calc(50%);
+    
+}
+.tTip {
+	width: 200px;
+	position: absolute;
+	cursor: pointer;
+	font-weight: bold;
+	text-align:center;
+	color:#FFF;
+}
+.tip {
+	color: #fff;
+	text-align:center;
+	font-size:16px;
+}
+#check {
+	cursor: default;
+    left: 351px;
+    opacity: 0;
+    top: 124px;
+    width: 50px;
+}
+#Muchmore{
+	cursor: default;
+    height: 40px;
+    left: 444px;
+    opacity: 0;
+    top: 188px;
+    width: 49px;
+}
+#Book {
+	left: 189px;
+    top: 128px;
+    width: 50px;
+	cursor: default;
+	opacity: 0;
+}
+#track{
+	left: 95px;
+    top: 211px;
+    width: 50px;
+	cursor: default;
+	opacity: 0;
+}
+#choose {
+	left: 265px;
+    top: 234px;
+    width: 66px;
+	cursor: default;
+	opacity: 0;
+}
+#monitor {
+	cursor: default;
+    left: 167px;
+    opacity: 0;
+    top: 329px;
+    width: 66px;
+}
+#surrender {
+	cursor: default;
+    left: 357px;
+    opacity: 0;
+    top: 329px;
+    width: 66px;
+}
+#feedback {
+	cursor: default;
+    left: 261px;
+    opacity: 0;
+    top: 394px;
+    width: 66px;
+}
+
+.logo_container {
+	padding-top: 70px;
+	 padding-bottom: 10px;
+}
+
+.logo_container img {
+    border: medium none;
+    padding: 0 0 0 10px;
+    width: auto;
+}
+.num .oneTextbox {
+    padding: 0 4px;
+    width: 21px;
+}
+
+.num .fourTextbox {
+    padding: 0 4px;
+   
+}
+
+.num1 input[type="text"] {
+    height: 15px;
+    margin: 0 1px;
+    outline: medium none;
+    padding: 1px;
+    width: 15px;
+}
+.num input[type="text"] {
+    height: 15px;
+ /*   margin: 0 1px; */
+    outline: medium none;
+    padding: 1px;
+    width: 30px;
+}
+.num input[type="submit"] {
+    background: none repeat scroll 0 0 #5f0f71;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 13px;
+    font-weight: bold;
+    outline: 0 none;
+    padding: 4px 7px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#pahal_img {
+	
+	/*
+	visibility: hidden;
+	*/	
+	background:url('../images/pahal-logo.png') no-repeat center center, url(../images/img-scroll-honour.png) no-repeat right top; 
+	
+	background-size: contain, 82px 99px;
+	/*
+   height:220px;
+   width:510px;
+   */
+	}
+
+#box-link { 
+		position: absolute; 
+		top: 0px; 
+		left: calc(100% - 82px); 
+		width: 82px; 
+		height: 99px; 
+		background-color: transparent; 
+		border: 1px yellow; }
+
+
+.num1 td {
+    text-align: center;
+}
+.num td {
+    text-align: center;
+}
+  
+/*-----------------------------------------------------------------------------------------------*/
+/*                                         TOOLTIP STYLES                                        */
+/*-----------------------------------------------------------------------------------------------*/
+
+.tip {
+	width: 212px;
+	padding-top: 37px;
+	overflow: hidden;
+	display: none;
+	position: absolute;
+	z-index: 500;
+	background: transparent url(../images/tipTop.png) no-repeat top;
+}
+.tipMid {
+	background: transparent url(../images/tipMid.png) repeat-y;
+	padding: 0 25px 20px 25px;
+}
+.tipBtm {
+	background: transparent url(../images/tipBtm.png) no-repeat bottom;
+	height: 32px;
+}
+
+.marquee-container>:nth-child(odd) {
+	background-color: gray;
+}
+
+.marquee-container>:nth-child(even) {
+	background-color: white;
+	}
+
+ 
